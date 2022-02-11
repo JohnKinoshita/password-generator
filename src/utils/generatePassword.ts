@@ -80,7 +80,7 @@ function generatePassword() {
       '.',
     ],
   };
-  let passwordLength = 20;
+  let passwordLength = 30;
   let password = '';
 
   const characterArraysValues = Object.values(characterArrays);
