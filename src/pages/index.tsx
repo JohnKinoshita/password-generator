@@ -10,7 +10,7 @@ import ThemeSwitcher from '../components/ThemeSwitcher';
 import generatePassword from '../utils/generatePassword';
 
 const Home: NextPage = () => {
-  const [passwordOutput, setPasswordOutput] = useState('');
+  const [passwordOutput, setPasswordOutput] = useState<string>('');
   const [lengthInput, setLengthInput] = useState('20');
 
   return (
