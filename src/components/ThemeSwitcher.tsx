@@ -1,5 +1,5 @@
 function ThemeSwitcher() {
-  return <button>Dark mode</button>;
+  return <button></button>;
 }
 
 export default ThemeSwitcher;

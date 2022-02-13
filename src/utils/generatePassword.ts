@@ -1,4 +1,4 @@
-function generatePassword() {
+function generatePassword(lengthInput: string) {
   const characterArrays = {
     lowercaseAlpha: [
       'a',
@@ -80,12 +80,13 @@ function generatePassword() {
       '.',
     ],
   };
-  let passwordLength = 30;
+
+  let passwordLength = Number(lengthInput);
   let password = '';
 
   const characterArraysValues = Object.values(characterArrays);
 
-  const randomCharacterArray: any = () => {
+  const randomCharacterArray = () => {
     return characterArraysValues[
       Math.floor(Math.random() * characterArraysValues.length)
     ];

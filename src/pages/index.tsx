@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import { useState } from 'react';
 import CharactersUsed from '../components/CharactersUsed';
 import GenerateButton from '../components/GenerateButton';
@@ -12,29 +11,32 @@ import generatePassword from '../utils/generatePassword';
 
 const Home: NextPage = () => {
   const [passwordOutput, setPasswordOutput] = useState('');
+  const [lengthInput, setLengthInput] = useState('20');
 
   return (
-    <body>
-      <main className='container mx-auto p-4'>
-        <ThemeSwitcher />
-        <div>
-          <h1 className='uppercase text-3xl font-bold bg-clip-text text-transparent my-8 bg-gradient-to-b from-black to-green-400'>
-            Password Generator
-          </h1>
-        </div>
-        <div className='container'>
-          <PasswordOutput passwordOutput={passwordOutput} />
-          <PasswordStats />
-          <LengthControl />
-          <CharactersUsed />
-          <MoreOptions />
-          <GenerateButton
-            generatePassword={generatePassword}
-            setPasswordOutput={setPasswordOutput}
-          />
-        </div>
-      </main>
-    </body>
+    <main className='container mx-auto p-4'>
+      <ThemeSwitcher />
+      <div>
+        <h1 className='uppercase text-3xl font-bold bg-clip-text text-transparent my-8 bg-gradient-to-b from-black to-green-400'>
+          Password Generator
+        </h1>
+      </div>
+      <div className='container'>
+        <PasswordOutput passwordOutput={passwordOutput} />
+        <PasswordStats />
+        <LengthControl
+          setLengthInput={setLengthInput}
+          lengthInput={lengthInput}
+        />
+        <CharactersUsed />
+        <MoreOptions />
+        <GenerateButton
+          generatePassword={generatePassword}
+          setPasswordOutput={setPasswordOutput}
+          lengthInput={lengthInput}
+        />
+      </div>
+    </main>
   );
 };
 

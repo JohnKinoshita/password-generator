@@ -1,9 +1,14 @@
-import password from '../utils/generatePassword';
-
-function GenerateButton({ generatePassword, setPasswordOutput }) {
+function GenerateButton({
+  generatePassword,
+  setPasswordOutput,
+  lengthInput,
+}: {
+  generatePassword: (lengthInput: string) => string;
+  setPasswordOutput: (password: string) => void;
+  lengthInput: string;
+}) {
   const handleClick = () => {
-    generatePassword();
-    setPasswordOutput(password);
+    setPasswordOutput(generatePassword(lengthInput));
   };
 
   return (

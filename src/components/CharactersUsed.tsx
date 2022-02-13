@@ -5,10 +5,10 @@ function CharactersUsed() {
     <>
       <label className='block'>Characters used:</label>
       <div className='flex justify-between'>
-        <Checkbox></Checkbox>
-        <Checkbox></Checkbox>
-        <Checkbox></Checkbox>
-        <Checkbox></Checkbox>
+        <Checkbox title={'A-Z'}></Checkbox>
+        <Checkbox title={'a-z'}></Checkbox>
+        <Checkbox title={'0-9'}></Checkbox>
+        <Checkbox title={'!@#$%^&*(){}[]=<>/,.'}></Checkbox>
       </div>
     </>
   );
