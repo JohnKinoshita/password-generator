@@ -1,14 +1,26 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useContext } from 'react';
+import { PasswordContext } from './PasswordContext';
 
-function LengthControl({
-  setLengthInput,
-  lengthInput,
-}: {
-  setLengthInput: (value: string) => void;
-  lengthInput: string;
-}) {
+function LengthControl() {
+  const {
+    setPassword,
+    generatePassword,
+    lengthInput,
+    setLengthInput,
+    characters,
+  } = useContext(PasswordContext);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLengthInput(e.target.value);
+    setPassword(
+      generatePassword(
+        e.target.value,
+        characters[0].selected,
+        characters[1].selected,
+        characters[2].selected,
+        characters[3].selected
+      )
+    );
   };
 
   return (
